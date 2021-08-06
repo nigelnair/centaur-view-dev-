@@ -1,0 +1,25 @@
+
+<div id="container">
+    <div class="logo">
+        <a href="centaurbz.com" class="simple-text">
+            <div >
+                <img class="logo-img" src="/assets/img/CENTAUR CORP LOGO HI RES VERSION_full_white.png"/>
+            </div>
+        </a>
+    </div>
+    <div class="sidebar-wrapper">
+          <ul class="nav">
+            <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+                <a class="nav-link" [routerLink]="[menuItem.path]">
+                    <!-- <i class="material-icons"><img class="icon" src="assets/img/{{menuItem.icon}}"></i> -->
+
+                    <span> <i class="icon {{menuItem.icon}}"></i>{{menuItem.title}}</span>
+                </a>
+            </li>
+        </ul>
+        <div class="active-pro" (click)="logout()">
+                <span>Sign Out</span>
+        </div>
+    </div>
+
+</div>

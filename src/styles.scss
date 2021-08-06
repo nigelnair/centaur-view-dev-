@@ -1,0 +1,274 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+@import "~ngx-toastr/toastr.css";
+/*$color-overlay: rgba(0, 0, 0, .7);*/
+/*$dialog-position-top: center;*/
+@import "~ngx-smart-modal/ngx-smart-modal";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+body{
+	margin: 0;
+	padding: 0;
+	/*background-color: #eee;*/
+}
+.sidebar {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  color:white;
+  background-color: #3786D6;
+  /*background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(assets/img/sidebar-4.jpg);*/
+  
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+input{
+  border: 1px #ccc solid;
+}
+
+.main-panel{
+  padding-top: 45px;
+  padding-left: 20px;
+  margin-left: 300px; /* Same as the width of the sidenav */
+  font-size: 16px; /* Increased text to enable scrolling */
+  /*padding: 0px 10px;*/
+  background-color: #eee;
+  /*border: 1px red solid;*/
+  overflow: auto;
+  height:100vh;
+}
+
+
+#menuWrapper{
+  display: none;
+  /*border: 1px red solid;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 942px) {
+/* start of medium tablet styles */
+/**/
+
+#menuWrapper{
+  display: block;
+ margin: 0;
+  padding: 0px;
+  
+   /*make it look decent enough */
+  background: #eee;
+  color: #cdcdcd;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+.main-panel{
+  padding-top: 95px;
+  padding-left: 20px;
+  /*margin-top: 100px;*/
+  margin-left: 0px; /* Same as the width of the sidenav 
+  font-size: 16px; /* Increased text to enable scrolling */
+  /*padding: 0px 10px;*/
+  background-color: #eee;
+  /*border: 1px red solid;*/
+  overflow: auto;
+  height:100vh;
+}
+.sidebar {
+  display: none;
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  color:white;
+  background-color: #3786D6;
+  /*background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(assets/img/sidebar-4.jpg);*/
+  
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+
+
+
+
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: #3786D6;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+
+
+
+}

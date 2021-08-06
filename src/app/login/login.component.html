@@ -1,0 +1,30 @@
+<div class="container2">
+    <img class="logo" width="80%" alt="Angular Logo" src="assets/logo3.png">
+    <!-- <img class="logohbo" width="40%" alt="Angular Logo" src="assets/logohbo.png"> -->
+  <h2 class="bluefont">
+   Welcome, Centaur Member Login:
+  </h2>
+
+  <form class="form" (ngSubmit)="login()" #heroForm="ngForm" >    
+        <div *ngIf="isLogin" class="error">
+          <p><i class="fas fa-exclamation-triangle"></i>&nbsp;&nbsp;Error: Invalid username or password. please visit our website https://www.centaurbz.com/  or call at 00-501-380-0101 for assistance.</p>
+        </div>
+          <div *ngIf="loggedIn == 'loggedin'" class="success">
+          <p>Currently logged in Customer Portal.</p>
+        </div>
+        <div class="form-item"> 
+          <input class="txt1" type="text" [(ngModel)]="username" name="username" id="username" placeholder="username" autocomplete="off" required><br>
+        </div><br> 
+        <div class="form-item"> 
+          <input class="txt1" type="password" [(ngModel)]="password" name="password" id="password" placeholder="password" required><br>
+        </div><br>
+   
+        <a class="accept" target="_blank" href="https://www.centaurbz.com/">Not Registered? <b class="bluefont">Register Now</b></a><br>
+        <a class="accept" target="_blank" href="https://www.centaurbz.com/">Forgot Username/Password?</a><br><br>
+      
+        <div class="form-item">
+          <input class="button" type="submit" Value="Login" [disabled]="!heroForm.form.valid" >
+        </div>
+
+    </form>
+</div>

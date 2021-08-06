@@ -1,0 +1,103 @@
+<div class="wrapper">
+     <div class="sidebar" data-color="danger" data-background-color="white" data-image="./assets/img/sidebar-1.jpg">
+        <app-sidebar></app-sidebar>
+        <!-- <div class="sidebar-background" style="background-image: url(./assets/img/sidebar-4.jpg)"></div> -->
+    </div>
+    <div class="main-panel">
+        <section class="section">
+			<!-- <div class="container">
+		    	<img class="logo" alt="Angular Logo" src="assets/logo3.png">
+				<button class="button" type="submit" Value="Logout" (click)="logout()">Logout</button>
+			</div> -->
+		<!-- 	<p>Welcome,  &nbsp;&nbsp;&nbsp;&nbsp;
+			<span *ngIf="clientData.active == 1"> <i class="fas fa-circle active"></i> Active</span>
+			<span *ngIf="clientData.active == 3"><i class="fas fa-circle disconnect"></i> Disconnected</span>
+			<span *ngIf="clientData.active == 2"><i class="fas fa-circle disconnect"></i> Disconnected</span>
+		    <span *ngIf="clientData.active == 0"><i class="fas fa-circle disconnect"></i> Disconnected</span></p>
+		    <h4><b>{{clientData.c_name}}</b></h4> -->
+		<!-- 	<button class="password" type="submit" Value="Logout" (click)="ngxSmartModalService.getModal('myModal').open()">Change Password</button> -->
+							<!-- <ngx-smart-modal #myModal identifier="myModal">
+								<form class="form" (ngSubmit)="changePassword(clientData.c_id)" #heroForm="ngForm" >
+									<br>
+			   						<h3>Enter New Password</h3>
+			   						<div class="form-item"> 
+							          	<input class="txt1" type="text" [(ngModel)]="password" name="password" minlength="6" maxlength="15" id="password" placeholder="New Password" autocomplete="new-password" required><br><br>
+							          	<span>* minimun of six characters</span>
+							        </div>
+			   						<div class="form-item"> 
+		  									<button type="submit" class="password"  [disabled]="!heroForm.form.valid" >SAVE</button>
+							        </div><br> 
+
+		  						</form>
+							</ngx-smart-modal> -->
+					<form class="form" (ngSubmit)="updateAcc(clientData.c_id)" #heroForm="ngForm" >
+
+		    <div class="table-responsive-sm bill">
+				<table class="table table-borderless table-sm nowrap customerdata" cellspacing="0" width="50%">
+					<thead>
+			         	<tr>
+			      			<th colspan="2" height="50px" style="font-weight: lighter;font-size: 30px; padding-left: 30px;">My Profile </th>       
+			      			<!-- <th></th>      -->
+							<!-- <th style="text-align: right;font-size:20px;font-family: Helvetica;"><span style="text-align: right;color: #009FCC;">Account Balance: </span><span style="font-family: Helvetica; font-weight: lighter;" >${{clientData.acc_balance}}</span></th> -->
+			            </tr>
+			        </thead>
+			        <tbody>
+			            <tr>
+							<td></td>
+							<td></td>
+						</tr>
+				
+
+			            <tr>
+							<td style="text-align: right; font-size: 15px;padding-right: 20px;"><b>Customer #:</b> </td>
+							<td>{{clientData.c_code}}</td>
+						</tr>
+						<tr>
+							<td style="text-align: right; font-size: 15px;padding-right: 20px;"><b>Name:</b> </td>
+							<td>{{clientData.c_name}}</td>
+			            </tr>
+			            <tr>
+							<td style="text-align: right; font-size: 15px;padding-right: 20px;"> <b>Street:</b> </td>
+							<td>{{clientData.c_address}}</td>
+						</tr>
+						<tr>
+							<td style="text-align: right; font-size: 15px;padding-right: 20px;"> <b>Village/Town:</b> </td>
+							<td>{{clientData.c_address2}}</td>
+			            </tr>  
+
+			            <tr>
+							<td style="text-align: right; font-size: 15px;padding-right: 20px;"> <b>Mobile:</b> </td>
+							<td><input  class="txt1" type="number" minlength="6" name="" [(ngModel)]="clientData.c_cell" [ngModelOptions]="{standalone: true}">&nbsp;&nbsp;<i matTooltip="Tooltip!" [matTooltipPosition]="position" class="fas fa-edit blue"></i></td>
+			            </tr>
+			            <tr>
+							<td style="text-align: right; font-size: 15px;padding-right: 20px;"> <b>Home Phone:</b> </td>
+							<td><input  class="txt1" type="number" minlength="6" name="" [(ngModel)]="clientData.c_phone" [ngModelOptions]="{standalone: true}">&nbsp;&nbsp;<i matTooltip="Tooltip!" [matTooltipPosition]="position" class="fas fa-edit blue"></i></td>
+			            </tr>
+			            <tr>
+							<td style="text-align: right; font-size: 15px;padding-right: 20px;"> <b>Email:</b> </td>
+							<td><input  class="txt1" type="email" minlength="6" name="" [(ngModel)]="clientData.c_email_alt" (ngModelChange)="validate(clientData.c_email_alt)" [ngModelOptions]="{standalone: true}">&nbsp;&nbsp;<i matTooltip="Tooltip!" [matTooltipPosition]="position" class="fas fa-edit blue"></i></td>
+						</tr>
+						<tr>
+							<td style="text-align: right; font-size: 15px;padding-right: 20px;"> <b>Username:</b> </td>
+							<td>{{clientData.c_email}}</td>
+						</tr>
+						<tr>
+							<td style="text-align: right; font-size: 15px;padding-right: 20px;"> <b>Password:</b> </td>
+							<td><input class="txt1" type="text" [(ngModel)]="password" name="password" minlength="6" maxlength="15" id="password" placeholder="New Password" (ngModelChange)="validatePassword(password)" autocomplete="new-password">&nbsp;&nbsp;<i matTooltip="Tooltip!" [matTooltipPosition]="position" class="fas fa-edit blue"></i></td>
+						</tr>
+			            <tr height="100px">
+			            	<td></td>
+			            	<td style="text-align: left;padding-top:30px;"><button type="submit" class="button"  [disabled]="save == 0">Update Profile</button></td>
+			            </tr>
+			        </tbody>
+				</table><br>
+			</div>
+		  			</form>
+
+		</section>
+    </div>
+</div>
+
+
+
+

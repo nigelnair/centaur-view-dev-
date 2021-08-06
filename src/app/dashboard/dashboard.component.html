@@ -1,0 +1,114 @@
+<div class="wrapper">
+     <div class="sidebar" data-color="danger" data-background-color="white" data-image="./assets/img/sidebar-1.jpg">
+        <app-sidebar></app-sidebar>
+        <!-- <div class="sidebar-background" style="background-image: url(./assets/img/sidebar-4.jpg)"></div> -->
+    </div>
+    <div class="main-panel">
+        <section class="section">
+			<!-- <div class="container">
+		    	<img class="logo" alt="Angular Logo" src="assets/logo3.png">
+				<button class="button" type="submit" Value="Logout" (click)="logout()">Logout</button>
+			</div> -->
+			<p>Welcomee,  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+			<span *ngIf="clientData.active == 1"> <i class="fas fa-circle active"></i> Active</span>
+			<span *ngIf="clientData.active == 3"><i class="fas fa-circle disconnect"></i> Disconnected</span>
+			<span *ngIf="clientData.active == 2"><i class="fas fa-circle disconnect"></i> Disconnected</span>
+		    <span *ngIf="clientData.active == 0"><i class="fas fa-circle disconnect"></i> Disconnected</span></p>
+		    <h4><b>{{clientData.c_name}}</b></h4>
+		<!-- 	<button class="password" type="submit" Value="Logout" (click)="ngxSmartModalService.getModal('myModal').open()">Change Password</button> -->
+							<!-- <ngx-smart-modal #myModal identifier="myModal">
+								<form class="form" (ngSubmit)="changePassword(clientData.c_id)" #heroForm="ngForm" >
+									<br>
+			   						<h3>Enter New Password</h3>
+			   						<div class="form-item"> 
+							          	<input class="txt1" type="text" [(ngModel)]="password" name="password" minlength="6" maxlength="15" id="password" placeholder="New Password" autocomplete="new-password" required><br><br>
+							          	<span>* minimun of six characters</span>
+							        </div>
+			   						<div class="form-item"> 
+		  									<button type="submit" class="password"  [disabled]="!heroForm.form.valid" >SAVE</button>
+							        </div><br> 
+
+		  						</form>
+							</ngx-smart-modal> -->
+		    <div class="table-responsive-xl bill">
+				<table class="table table-borderless table-sm nowrap customerdata" cellspacing="0" width="80%">
+					<thead>
+			         	<tr>
+			      			<th colspan="2" height="50px" style="font-weight: lighter;font-size: 30px;">My Bill <i matTooltip="Tooltip!" [matTooltipPosition]="position" class="far fa-question-circle blue"></i></th>       
+			      			<!-- <th></th>      -->
+							<!-- <th style="text-align: right;font-size:20px;font-family: Helvetica;"><span style="text-align: right;color: #009FCC;">Account Balance: </span><span style="font-family: Helvetica; font-weight: lighter;" >${{clientData.acc_balance}}</span></th> -->
+			            </tr>
+			        </thead>
+			        <tbody>
+			            <!-- <tr> -->
+							<!-- <td style="text-align: right;color: #009FCC;"> <b>ID:</b> </td> -->
+							<!-- <td>{{clientData.c_id}}</td> -->
+						<!-- </tr> -->
+						<tr>
+			  				<td style="text-align: left; font-size: 15px;"> <b>ACCOUNT #: {{clientData.c_code}}</b> </td>
+							<td></td>
+			            </tr>
+
+			            <tr>
+							<td style="text-align: right;color: #009FCC;"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td style="text-align:left; font-size:18px;border-right: 1px #ccc solid;">Balance Due: </td>
+							<td style="text-align:left; font-size:18px;padding-left: 100px;"> Next payment due:</td>
+			            </tr>
+			            <tr>
+							<td style="text-align: left;font-size: 25px;border-right: 1px #ccc solid;"> <b>${{clientData.acc_balance}}</b> </td>
+							<td style="text-align: left;font-size: 25px;padding-left: 100px;"><b>July 1, 2020</b></td>
+						</tr>
+					<!-- 	<tr>
+							<td style="text-align: right;color: #009FCC;"> <b>Cell:</b> </td>
+							<td>{{clientData.c_cell}}</td>
+			            </tr>  
+			            <tr>
+							<td style="text-align: right;color: #009FCC;"> <b>Email:</b> </td>
+							<td>{{clientData.c_email_alt}}</td>
+						</tr>
+						<tr>
+							<td style="text-align: right;color: #009FCC;"> <b>Phone:</b> </td>
+							<td>{{clientData.c_phone}}</td>
+			            </tr> -->
+			        </tbody>
+				</table><br>
+			</div>
+		    <div class="table-responsive-xl bill">  	
+				<table class="table table-borderless table-sm nowrap customerMemTrans"  cellspacing="0" width="80%">
+					<thead>
+					  	<tr>
+								<th colspan="2" height="10px" style="text-align:left;font-weight: lighter;">Payment History &nbsp;&nbsp;&nbsp; <span style="text-align:left;font-size: 15px;"><i class="fas fa-info-circle blue"></i> All payments are reflected in the system within 24 hrs</span></th> 
+					  	</tr>
+					</thead>
+					<tbody>
+						<tr>
+			  				<td style="text-align: left; font-size: 15px;"></td>
+							<td style="text-align:left;font-weight: bold;font-size: 18px;"></td>
+			            </tr>
+						<tr>
+			  				<td style="text-align: left; font-size: 15px;">Your Previous 3 months of payments are available for viewing</td>
+							<td style="text-align:left;font-weight: bold;font-size: 18px;"> Transactions</td>
+			            </tr>
+			            <tr>
+			  				<td style="text-align: left; font-size: 15px;"><ng2-smart-table class="smart_table" [settings]="settings" [source]="clientPayments"></ng2-smart-table></td>
+							<td style="text-align: left; font-size: 15px;">Select a date range to display <br>	 <input type="date" min="" name=""> <input type="date" name=""><br><button class="button" type="submit" Value="Logout" >View Statement</button></td>
+			            </tr>
+			            <tr>
+			  				<td style="text-align: left; font-size: 15px;"></td>
+							<td style="text-align: left; font-size: 15px;"></td>
+			            </tr>
+
+					</tbody>
+					
+				</table>
+		    </div><br>
+		</section>
+    </div>
+</div>
+
+
+
+

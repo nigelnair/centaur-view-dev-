@@ -1,0 +1,122 @@
+<div class="wrapper">
+     <div class="sidebar" data-color="danger" data-background-color="white" data-image="./assets/img/sidebar-1.jpg">
+        <app-sidebar></app-sidebar>
+        <div class="sidebar-background" style="background-image: url(./assets/img/sidebar-4.jpg)"></div>
+    </div>
+    <div class="main-panel">
+        <section class="section">
+			<!-- <div class="container">
+		    	<img class="logo" alt="Angular Logo" src="assets/logo3.png">
+				<button class="button" type="submit" Value="Logout" (click)="logout()">Logout</button>
+			</div> -->
+	<!-- 		<p>Welcome,  &nbsp;&nbsp;&nbsp;&nbsp;
+			<span *ngIf="clientData.active == 1"> <i class="fas fa-circle active"></i> Active</span>
+			<span *ngIf="clientData.active == 3"><i class="fas fa-circle disconnect"></i> Disconnected</span>
+			<span *ngIf="clientData.active == 2"><i class="fas fa-circle disconnect"></i> Disconnected</span>
+		    <span *ngIf="clientData.active == 0"><i class="fas fa-circle disconnect"></i> Disconnected</span></p>
+		    <h4><b>{{clientData.c_name}}</b></h4> -->
+		<!-- 	<button class="password" type="submit" Value="Logout" (click)="ngxSmartModalService.getModal('myModal').open()">Change Password</button> -->
+							<!-- <ngx-smart-modal #myModal identifier="myModal">
+								<form class="form" (ngSubmit)="changePassword(clientData.c_id)" #heroForm="ngForm" >
+									<br>
+			   						<h3>Enter New Password</h3>
+			   						<div class="form-item"> 
+							          	<input class="txt1" type="text" [(ngModel)]="password" name="password" minlength="6" maxlength="15" id="password" placeholder="New Password" autocomplete="new-password" required><br><br>
+							          	<span>* minimun of six characters</span>
+							        </div>
+			   						<div class="form-item"> 
+		  									<button type="submit" class="password"  [disabled]="!heroForm.form.valid" >SAVE</button>
+							        </div><br> 
+
+		  						</form>
+							</ngx-smart-modal> -->
+		    <div class="table-responsive-xl bill">
+				<table class="table table-borderless table-sm nowrap customerdata" cellspacing="0" width="80%">
+					<thead>
+			         	<tr>
+			      			<th colspan="2" height="50px" style="font-weight: lighter;font-size: 30px;">My Services <i class="fas fa-tablet-alt blue"></i></th>       
+			      			<!-- <th></th>      -->
+							<!-- <th style="text-align: right;font-size:20px;font-family: Helvetica;"><span style="text-align: right;color: #009FCC;">Account Balance: </span><span style="font-family: Helvetica; font-weight: lighter;" >${{clientData.acc_balance}}</span></th> -->
+			            </tr>
+			        </thead>
+			        <tbody>
+			            <!-- <tr> -->
+							<!-- <td style="text-align: right;color: #009FCC;"> <b>ID:</b> </td> -->
+							<!-- <td>{{clientData.c_id}}</td> -->
+						<!-- </tr> -->
+						<tr>
+			  				<td style="text-align: left; font-size: 15px;"> <b>ACCOUNT #: {{clientData.c_code}}</b> </td>
+							<td></td>
+			            </tr>
+
+			            <tr style="height: 10px;">
+							<td style="text-align: right;color: #009FCC;"></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td colspan="2" class="banner">Charges & Services </td>
+							<td style="text-align:left; font-size:18px;padding-left: 100px;"></td>
+			            </tr>
+			            <tr style="height: 10px;">
+							<td colspan="2" style="text-align: left;font-size: 15px;padding-top: 20px;">This section displays the monthly charges included in your service. </td>
+							<td></td>
+						</tr>
+			        </tbody>
+				</table><br>	
+		<table class="table table-hover table-borderless table-sm nowrap customerMemTrans" cellspacing="0" width="60%">
+	        <thead>
+	          	<tr>
+	            	<th>Name</th>
+	            	<th>Qty</th>
+	            	<th>Price</th>
+	          	</tr>
+	        </thead>
+	        <tbody>
+	        	<tr style="font-size: 15px" *ngFor="let  clientMemTrans of  clientMemTrans; let i = index ">
+	            	<td>{{clientMemTrans.sku_name}}&nbsp;&nbsp; ({{clientMemTrans.sku_cat_name}})</td>     
+	            	<td>{{clientMemTrans.qty}}</td>
+	            	<td>{{clientMemTrans.price | currency}}</td>     
+	          	</tr>
+	          	<tr>
+	          		<th></th>
+	          		<th></th>
+	          		<th></th>
+	          	</tr>
+	          	<tr style="font-size: 15px">
+	          		<th  height="60px" >GST </th>
+	                <th class="strong">12.5%</th>
+	                <th class="strong">{{ ((bill_gst_total * 0.125)/1.125)| currency}}</th>
+	            </tr>
+	        </tbody>
+	    </table>
+	    <table class="table table-borderless table-sm nowrap customerdata" style="margin-top: -50px;" cellspacing="0" width="80%">
+	    		<thead>
+			         	<tr>
+			      			<th colspan="1" height="1px" style="font-weight: lighter;"></th>       
+			      			<!-- <th></th>      -->
+							<!-- <th style="text-align: right;font-size:20px;font-family: Helvetica;"><span style="text-align: right;color: #009FCC;">Account Balance: </span><span style="font-family: Helvetica; font-weight: lighter;" >${{clientData.acc_balance}}</span></th> -->
+			            </tr>
+			        </thead>
+			        <tbody>
+			            <!-- <tr> -->
+							<!-- <td style="text-align: right;color: #009FCC;"> <b>ID:</b> </td> -->
+							<!-- <td>{{clientData.c_id}}</td> -->
+						<!-- </tr> -->
+						<!-- <tr> -->
+			  				<!-- /*<td style="text-align: left; font-size: 15px;"> <b>ACCOUNT #: {{clientData.c_code}}</b> </td>*/ -->
+							<!-- <td></td> -->
+			            <!-- </tr> -->
+						<tr>
+							<td colspan="1" class="banner">Total including GST : <span style="margin-left: 250px;">{{ bill_gst_total| currency}}</span></td>
+							<td style="text-align:left; font-size:18px;padding-left: 100px;"></td>
+			            </tr>
+			        </tbody>
+				</table><br>	
+	</div>
+		</section>
+    </div>
+</div>
+
+
+
+
